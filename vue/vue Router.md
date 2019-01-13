@@ -108,8 +108,8 @@ Vue.use(VueRouter);
 '/' ->app  
 '/ppa' ->ppa
 ```
-```
-const routes = [//一个数组
+```javascript
+const routes = [ //配置路由，这是一个数组
 //配置什么路径就走哪个组件
   {
       path:'/', //根路径
@@ -400,7 +400,6 @@ export default {
     name:'tamen'
 }
 ```
-
 #### 路由对象
 `在组件内即this.$route,存着一些与路由相关的信息`
 
