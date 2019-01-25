@@ -213,16 +213,40 @@ pig.save();
 查询操作
 find 查询所有
 //koa中使用async和await
-Animal.find(查询条件,()=>{})
+let arr = Animal.find(查询条件,()=>{})
 
 输入给前台
-ctx.body = {} 
+ctx.body = {data.arr} 
 ```
 查询条件
 
+```JavaScript
+/*
+$or 或关系
+$nor 或关系取反
+$gt 大于
+$gte 大于等于
+$lt 小于
+$lte 小于等于
+$ne 不等于
+$in  在多个值范围内
+$nin 不在多个值范围内
+$all 匹配数组中多个值
+$regex 正则，用于模糊查询
+$size 匹配数组大小
+$exists 字段是否存在
+$mod 取模运算
+$elemMatch 匹配内数组内的元素
+$slice 查询字段集合中的元素（比如从第几个之后，第N到第M个元素
+*/
 ```
 
+```JavaScript
+//全局查找有带w字符的用户，
+//$regex后面写的就是js正则表达式
+// User.find({'user':{$regex:/w/g}})
 ```
+
 添加
 
 ```
@@ -231,16 +255,17 @@ save
 
 更新
 
-```
+```JavaScript
 user.update({
-    {'user':'pig'},
-    {'pwd':'123'}
+    {'user':'pig'},//要修改哪条数据
+    {'pwd':'123'}//修改它的什么
 })
 ```
 删除
 
-```
-
+```JavaScript
+ User.remove( {'user' : 'ws'})
+ //{'user' : 'ws'}  要删除哪条数据
 ```
 
 
